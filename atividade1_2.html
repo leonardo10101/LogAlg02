@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1.2</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        //Criando Variáveis Principais
+
+        var nomeFuncionario = prompt("Digite o nome do funcionário:");
+        var tempoServico = parseInt(prompt("Digite o tempo de serviço em meses:"));
+        var salarioMedio = parseFloat(prompt("Digite o salário:"));
+        var idadeFuncionario = parseInt(prompt("Digite a idade do funcionário:"));
+        var abonoSalario = "";
+        var salarioAtualizado ="";
+        var valorINSS = "";
+        //Processamento de dados
+        if(tempoServico>11){
+            abonoSalario= salarioMedio*10/100
+            salarioAtualizado = salarioMedio + abonoSalario + idadeFuncionario}
+
+        else{
+            salarioAtualizado = salarioMedio + idadeFuncionario
+        };
+        
+        if(salarioAtualizado<=1500){
+            valorINSS = salarioAtualizado*5/100
+        }
+        else if(salarioAtualizado>1500.01 && salarioAtualizado <=2500){
+            valorINSS = salarioAtualizado*10/100
+        }
+        else if(salarioAtualizado>2500.01 && salarioAtualizado <=3500){
+            valorINSS = salarioAtualizado*13/100
+        }
+        else{
+            valorINSS = salarioAtualizado*15/100
+        };
+        output.innerHTML = ` Nome: ${nomeFuncionario} <br> Tempo de Serviço: ${tempoServico} 
+        <br> Salário Médio: ${salarioMedio} <br> Idade: ${idadeFuncionario} <br> <hr> Abono Salarial: ${abonoSalario} 
+        <br> Próximos salários: ${salarioAtualizado} <br> Contribuição para o INSS: ${valorINSS}`
+    </script>
+</body>
+</html>
