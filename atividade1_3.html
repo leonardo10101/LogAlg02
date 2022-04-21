@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="André Luferat - https://github.com/Luferat/">
-    <title>Atividade 1.3</title>
+    <title>Atividade 1.2</title>
 </head>
 
 <body>
 
-<!-- 
+    <!-- 
     IMPORTANTE!
         • Esta atividade pressupõe que você tenha conhecimentos básicos de HTML5 e de JavaScript.
         • Todos os elementos essenciais para o funcionamento do programa estão identificados (id="").
@@ -26,7 +26,7 @@
 
         <tr>
             <td>Nome do funcionário:</td>
-            <td><input type="text" id="name"></td>
+            <td><input type="text" id="employeeName"></td>
         </tr>
 
         <tr>
@@ -107,23 +107,37 @@
          */
         btnCalc.onclick = function () {
 
-    var nomeFuncionario = name.value 
-    var mesesServico = service.value
-    var averagePay = averagePay.value
-    var abono= allowance.value
-    var proximoSalario = nextPay.value
-    var INSS= inss.value
-    var idade=age.value
-            
+            /**
+             * 2) Crie as variáveis contendo todos os dados do funcionário.
+             *    Obténha dados digitados nos campos e armazene nas variáveis.
+             *    Faça as conversões 'string → número' quando necessário.
+             */
+            var nome = employeeName.value;
+            var tempoServico = parseInt(serviceTime.value);
+            var salarioAtual = parseFloat(averagePay.value);
+            var idade = parseInt(age.value);
 
-   console.log(nomeFuncionario)
+            // Exibe dados no console.
+            console.log(nome, tempoServico, salarioAtual, idade);
 
+            /**
+             * 3) Crie uma variável para armazenar o abono salarial do funcionário.
+             *    Calcule o abono salarial do funcionário, com base no tempo de serviço e na idade.
+             *    Armazene na variável.
+             */
+            var abono = 0;
+
+            if (tempoServico > 12)
+                abono = salarioAtual * 10 / 100;
+
+            abono += idade;
 
             /**
              * 4) Crie uma variável para armazenar o valor do novo salário.
              *    Calcule o valor do novo salário.
              *    Armazene na variável.
              */
+            var novoSalario = salarioAtual + abono;
 
             /**
              * 5) Crie uma variável para armazenar o valor da contribuição ao INSS.
@@ -135,6 +149,8 @@
             /**
              * 6) Exiba o valor das variáveis 3, 4 e 5 nos campos 'readonly' do formulário.
              */
+            allowance.value = abono;
+            nextPay.value = novoSalario;
 
             /**
              * 7) Ao clicar no botão [Gerar relatório], execute a 'Função sem nome'.
