@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1.1</title>
+    <style>
+        * {
+            font-family: monospace;
+        }
+
+        table {
+            margin: auto;
+            max-width: 100px;
+        }
+
+        input {
+            text-align: right;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="">
+
+    <h2>Atividade 1.1</h2>
+    <p>Crie os scripts necessários para fazer a calculadora abaixo funcionar.</p>
+    <ol>
+        <li>O usuário digita o primeiro e o segundo números;</li>
+        <li>O usuário escolhe uma operação e clica no botão correspondente;</li>
+        <li>O resultado da operação entre os dois números aparece no terceiro campo.</li>
+    </ol>
+
+    <hr>
+
+    <table>
+        <tr>
+            <th style="font-size: 1.2rem"><strong>FuleCalc</strong></th>
+        </tr>
+        <tr>
+            <th><input type="number" id="num1" placeholder="0"></th>
+        </tr>
+
+        <tr>
+            <th><input type="number" id="num2" placeholder="0"></th>
+        </tr>
+
+        <tr>
+            <th style="white-space: nowrap;">
+                <button id="sum">+</button>
+                <button id="sub">-</button>
+                <button id="mul">x</button>
+                <button id="div">&#247;</button>
+            </th>
+        </tr>
+
+        <tr>
+            <th><input type="number" id="result" readonly placeholder="0"></th>
+        </tr>
+    </table>
+
+    <script>  
+  sum.onclick = function (num1, num2){
+            var number1 = parseFloat(document.getElementById("num1").value)
+            var number2 = parseFloat(document.getElementById("num2").value)
+      result.value = (number1 + number2)
+  };
+  sub.onclick = function (num1, num2){
+            var number1 = parseFloat(document.getElementById("num1").value)
+            var number2 = parseFloat(document.getElementById("num2").value)
+      result.value = (number1 - number2)
+  };
+  mul.onclick = function (num1, num2){
+            var number1 = parseFloat(document.getElementById("num1").value)
+            var number2 = parseFloat(document.getElementById("num2").value)
+      result.value = (number1 * number2)
+  };
+div.onclick = function (num1, num2){
+            var number1 = parseFloat(document.getElementById("num1").value)
+            var number2 = parseFloat(document.getElementById("num2").value)
+      result.value = (number1 / number2)
+};
+    </script>
+
+</body>
+
+</html>
